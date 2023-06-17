@@ -2,7 +2,7 @@ import  Layout  from '@/components/Layout';
 import Post from '@/components/Post';
 import { getAllPostsData } from '@/lib/posts';
 
-const Blog: React.FC<any> = ({posts}) => {
+export default function Blog({posts}: any) {
     return (
         <Layout title='Bolg'>
             <ul className=' m-10'>
@@ -11,8 +11,6 @@ const Blog: React.FC<any> = ({posts}) => {
         </Layout>
     )
 };
-
-export default Blog;
 
 export async function getStaticProps() {
     const posts = await getAllPostsData();
